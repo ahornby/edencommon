@@ -22,6 +22,9 @@ set(LIB_INSTALL_DIR lib CACHE STRING
 set(CMAKE_INSTALL_DIR lib/cmake/edencommon CACHE STRING
     "The subdirectory where CMake package config files should be installed")
 
+# Tell CMake to also look in the directories where getdeps.py installs
+# our third-party dependencies.
+list(APPEND CMAKE_PREFIX_PATH "${CMAKE_CURRENT_SOURCE_DIR}/external/install")
 
 # CMake include directories
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/CMake"
